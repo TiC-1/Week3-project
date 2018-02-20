@@ -7,9 +7,9 @@
 - index.html
 - style.css
 - js
+  - logic.js (logic processes with API response)
   - api.js (request functions)
   - dom.js (DOM manipulation functions)
-  - logic.js (logic processes with API response)
 - test
   - test-api.html
   - test-api.js
