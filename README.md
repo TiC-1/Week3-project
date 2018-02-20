@@ -12,6 +12,7 @@
   - dom.js (DOM manipulation functions)
 - test
   - test-logic.js
+  - test-logic.html
   - test-api.html
   - test-api.js
   - test-dom.html
