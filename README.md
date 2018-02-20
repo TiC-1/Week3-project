@@ -11,6 +11,7 @@
   - api.js (request functions)
   - dom.js (DOM manipulation functions)
 - test
+  - test-logic.js
   - test-api.html
   - test-api.js
   - test-dom.html
