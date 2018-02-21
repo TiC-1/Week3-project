@@ -1,4 +1,60 @@
 var MUSICMETEO = {
+  city: "Torino",
+  weatherName: "Sunny",
+  songs: [
+    {title: "SUNNY",
+    artist: "Girls' Generation",
+    album: "The 1st ASIA TOUR CONCERT: Into The New World",
+    cover: "http://s.mxmcdn.net/images-storage/albums/nocover.png",
+    genre: "Pop",},
+
+    {
+      title: "Cinta Pertama",
+      artist: "Bunga C. Lestari",
+      album: "Cinta Pertama",
+      cover: "http://s.mxmcdn.net/images-storage/albums/nocover.png",
+      genre: "Pop",
+
+    },
+
+    {
+      title: "Sunny",
+      artist: "Super Junior",
+      album: "Super Show 2: The 2nd Asia Tour",
+      cover: "http://s.mxmcdn.net/images-storage/albums/nocover.png",
+      genre: "Pop",
+
+    },
+
+    {
+      title: "Sunny Sunny Cold Cold Day",
+      artist: "Herman Dune",
+      album: "Mas Cambios",
+      cover: "http://s.mxmcdn.net/images-storage/albums/nocover.png",
+      genre: "Pop",
+
+    },
+
+    {
+      title: "FOR BEAUTIFUL MAD HUMAN LIFE",
+      artist: "PENICILLIN",
+      album: "赫",
+      cover: "http://s.mxmcdn.net/images-storage/albums/nocover.png",
+      genre: "Pop",
+
+    },
+
+    {
+      title: "FOR BEAUTIFUL MAD HUMAN LIFE",
+      artist: "PENICILLIN",
+      album: "赫",
+      cover: "http://s.mxmcdn.net/images-storage/albums/nocover.png",
+      genre: "Pop",
+
+    },
+
+  ]
+
 
 };
 

@@ -46,7 +46,7 @@ test("API test", function(assert) {
     assert.equal(obj.city, "London", "request");
     // assert.equal(obj.weatherName, "Drizzle")
   }
-  getWeather(assertRequestApi, "London");
+  getWeather(assertRequestApi, function(cb, obj){ cb(obj) }, "London");
 
     var parsed = parseWeather(null, obj);
     assert.equal(parsed.weatherName, "Drizzle", "parse Weather");
