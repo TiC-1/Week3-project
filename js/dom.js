@@ -5,8 +5,7 @@ document.getElementById("searchForm").addEventListener("submit", function(event)
   event.preventDefault();
   var location = event.target.querySelector("input").value;
   //da fare il link tra MUSICMETEO e location (starà nelle API)
-  console.log(MUSICMETEO);
-  updateDOM(MUSICMETEO);
+  getWeather(updateDOM, getVideos, location);
   // window.MUSICMETEO
 });
 
@@ -35,6 +34,7 @@ function updateDOM() {
   // 1. crea un nodo con createSongNode
   // 2. inserisce titolo e cover della canzone
   var songs = MUSICMETEO.video;
+  console.log(MUSICMETEO);
   if (container) renderState(songs);
 
 } //fine della funzione updateDOM
