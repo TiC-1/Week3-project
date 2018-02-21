@@ -1,5 +1,22 @@
-test("API test", function(assert) {
-  var city = "london"
+test("Weather API test", function(assert) {
+
+  function assertRequestApi(obj) {
+    assert.equal(obj.city, "London", "Weather AJAX call updated");
+  }
+
+  getWeather(assertRequestApi, function(cb, obj) {
+    cb(obj)
+  }, "London");
+
+  assert.ok(true, "Empty test to wait for AJAX call");
+
+
+});
+
+
+
+test("Parsing Test", function(assert) {
+
   var obj = {
     coord: {
       lon: -0.13,
@@ -39,15 +56,23 @@ test("API test", function(assert) {
     id: 2643743,
     name: "London",
     cod: 200
+  };
+
+  var parsed = parseWeather(null, obj);
+  assert.equal(parsed.weatherName, "Drizzle", "Weather parsed");
+});
+
+test("Songs API test", function(assert) {
+
+
+
+  function assertRequestApi(obj) {
+    assert.equal("Sunny", "Sunny", "Songs AJAX call updated");
   }
 
+  getSongs(assertRequestApi, "piano");
 
-  function assertRequestApi(obj){
-    assert.equal(obj.city, "London", "request");
-    // assert.equal(obj.weatherName, "Drizzle")
-  }
-  getWeather(assertRequestApi, function(cb, obj){ cb(obj) }, "London");
+  assert.ok(true, "Empty test to wait for AJAX call");
 
-    var parsed = parseWeather(null, obj);
-    assert.equal(parsed.weatherName, "Drizzle", "parse Weather");
+
 });

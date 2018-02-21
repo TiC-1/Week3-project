@@ -19,28 +19,43 @@ function request(cb, url) {
   xhr.send();
 }
 
-function getWeather (cb, getSongs, city) {
+function getWeather(cb, getSongs, city) {
   var url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=5d8d83f7d25d47c3249949b56a91d910"; // completare
-  request (function (err, obj) {
+  request(function(err, obj) {
     parseWeather(err, obj);
-    console.log(obj, MUSICMETEO);
-    getSongs(cb, MUSICMETEO); // -> aggiornamento DOM
+    // console.log(obj, MUSICMETEO);
+    getVideos(cb, MUSICMETEO); // -> aggiornamento DOM
   }, url);
 }
 
-function parseWeather (err, obj) {
+function parseWeather(err, obj) {
   if (err) {
     return err;
   }
   MUSICMETEO.city = obj.name;
-  MUSICMETEO.weatherName = obj.weather[0].main;
+  MUSICMETEO.weather = obj.weather[0].main;
+  var weather = MUSICMETEO.weather;
   return MUSICMETEO;
 
 }
 
 
 
-function getSongs (main) {
-  var url = "https://api.musixmatch.com/ws/1.1/track.search?format=json&q_lyrics=sunny&quorum_factor=1&apikey=f0b389bb16427eb7a002b4938cd757cc"
-  request(cb, url);
+function getVideos(cb, weather) {
+  var url = "https://www.googleapis.com/youtube/v3/search?q=" + weather + "&part=snippet&maxResults=10&key=AIzaSyAYKTQjmWZ-aglVhBOEa9tCWLYrRV2jeLU";
+  request(function(err, obj) {
+    console.log(obj);
+    parseVideos(err, obj);
+  }, url);
+}
+
+function parseVideos(err, obj) {
+  if (err) {
+    return err;
+  }
+  MUSICMETEO.city = obj.name;
+  MUSICMETEO.weatherName = obj.weather[0].main;
+  var weatherName = MUSICMETEO.weatherName;
+  return MUSICMETEO;
+
 }
