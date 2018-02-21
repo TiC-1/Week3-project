@@ -4,31 +4,21 @@ var container = document.getElementById('search-results');
 document.getElementById("searchForm").addEventListener("submit", function(event) {
   event.preventDefault();
   var location = event.target.querySelector("input").value;
-
-  console.log(location + " siamo qui");
-  // var getWeather = function() {
-  //     updateDOM(MUSICMETEO);
-  //   },
-
-  //da fare il link tra MUSICMETEO e location (statà nelle API)
+  //da fare il link tra MUSICMETEO e location (starà nelle API)
   console.log(MUSICMETEO);
   updateDOM(MUSICMETEO);
   // window.MUSICMETEO
-
 });
 
 var createSongNode = function(song) {
-  //qui sotto creo ogni elemento li
   console.log(song);
   var songNode = document.createElement("li");
-  //songNode.className = "track";
-  //songNode.dataset.id = song.cover;
-  //var songButtonNode = document.createElement('button');
+  songNode.dataset.id = song.id;
   songNode.textContent = song.title;
-  //songNode.appendChild(songButtonNode);
-  //var songDescription = document.createTextNode("This is a song form the album" + state[i].album);
-  //songNode.appendChild(songDescription);
-  console.log(songNode);
+  songCover = document.createElement('img');
+  songCover.src = song.thumbnail;
+  songNode.appendChild(songCover);
+
   return songNode;
 };
 
@@ -38,18 +28,13 @@ var renderState = function(state) {
   state.forEach(function(s) {
     songListNode.appendChild(createSongNode(s));
   });
-
-  // you may want to add a class for css
   container.replaceChild(songListNode, container.firstChild);
 };
 
 function updateDOM() {
-  // 1. creare un nodo
-  // 2. inserirci le proprietà della canzone
-  var songs = MUSICMETEO.songs;
-  console.log(MUSICMETEO + " MUSICMETEO");
-  console.log(songs);
-  //var song=MUSICMETEO.songs[i];
+  // 1. crea un nodo con createSongNode
+  // 2. inserisce titolo e cover della canzone
+  var songs = MUSICMETEO.video;
   if (container) renderState(songs);
 
 } //fine della funzione updateDOM
