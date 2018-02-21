@@ -1,4 +1,4 @@
-document.getElementById("query-search").addEventListener("submit", function (event) {
+document.getElementById("searchForm").addEventListener("submit", function (event) {
   event.preventDefault();
   getWeather( function () {
     updateDOM(MUSICMETEO);

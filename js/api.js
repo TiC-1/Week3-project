@@ -20,17 +20,22 @@ function request(cb, url) {
 }
 
 function getWeather (cb, city) {
-  var url = "http://samples.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=5d8d83f7d25d47c3249949b56a91d910"; // completare
+  var url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=5d8d83f7d25d47c3249949b56a91d910"; // completare
   request (function (err, obj) {
     parseWeather(err, obj);
-    cb ();
+    console.log(obj, MUSICMETEO);
+    cb (MUSICMETEO);
   }, url);
 }
 
 function parseWeather (err, obj) {
   if (err) {
     return err;
-  } MUSICMETEO.city = obj.main;
+  }
+  MUSICMETEO.city = obj.name;
+  MUSICMETEO.weatherName = obj.weather[0].main;
+  return MUSICMETEO;
+
 }
 
 

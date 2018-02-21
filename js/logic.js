@@ -3,7 +3,6 @@ var MUSICMETEO = {
 };
 
 
-
 var getGif = function(textForm) {
   var xhr = new XMLHttpRequest();
   var url = "http://api.giphy.com/v1/gifs/search?q=" + textForm + "&api_key=dc6zaTOxFJmzC";
