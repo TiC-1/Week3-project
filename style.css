@@ -23,6 +23,21 @@ body {
 
 }
 
+.instruction{
+  font-weight: normal;
+  text-align: center;
+  color: black;
+  padding: 50px 40px;
+  /* background: #333333; */
+}
+
+.track{
+  font-weight: normal;
+  text-align: center;
+  color: red;
+  padding: 50px 40px;
+}
+
 .input_form {
   width: 100%;
   box-shadow: 0px 1px 1px 0px rgba(100,100,100,0.75);
