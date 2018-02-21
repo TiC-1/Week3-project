@@ -27,3 +27,9 @@
     3. DOM shows the artwork (album coverart property of the object) of the songs.
     4. by clicking on the artwork, the song is played with youtube; does not require KEY.
     5. STRETCH GOAL: the user can select an option to select only songs in local language, to feel in the city he/she has chosen - this may require translating the weather description with wordreference
+
+
+  ## APIs doc
+
+  ### youtube
+  https://developers.google.com/youtube/v3/docs/search/list
