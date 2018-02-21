@@ -1,4 +1,4 @@
-var videosList = [];
+
 
 
 
@@ -23,14 +23,12 @@ function request(cb, url) {
   xhr.send();
 }
 
-function getWeather(cb, getVideos, city) {
+function getWeather(cb, cb2, city) {
   var url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=5d8d83f7d25d47c3249949b56a91d910"; // completare
   request(function(err, obj) {
-    parseWeather(err, obj);
-    getVideos(cb, videosList); // -> aggiornamento DOM
+    var state = parseWeather(err, obj);
+    cb2(cb, state.weather);
   }, url);
-  MUSICMETEO.video = videosList;
-  console.log(MUSICMETEO);
 }
 
 function parseWeather(err, obj) {
@@ -47,7 +45,8 @@ function parseWeather(err, obj) {
 function getVideos(cb, weather) {
   var url = "https://www.googleapis.com/youtube/v3/search?q=" + weather + "&part=snippet&maxResults=10&type=video&key=AIzaSyAYKTQjmWZ-aglVhBOEa9tCWLYrRV2jeLU";
   request(function(err, obj) {
-    parseVideos(err, obj);
+    MUSICMETEO.video = parseVideos(err, obj);
+    cb(MUSICMETEO);
   }, url);
 }
 
@@ -57,6 +56,7 @@ function parseVideos(err, obj) {
   }
   var YoutubeVideoList = obj.items;
   //console.log(YoutubeVideoList);
+  var videosList = [];
 
   for (var i = 0; i < YoutubeVideoList.length; i++) {
     var videoItem = {};
