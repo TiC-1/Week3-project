@@ -19,12 +19,12 @@ function request(cb, url) {
   xhr.send();
 }
 
-function getWeather (cb, city) {
+function getWeather (cb, getSongs, city) {
   var url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=5d8d83f7d25d47c3249949b56a91d910"; // completare
   request (function (err, obj) {
     parseWeather(err, obj);
     console.log(obj, MUSICMETEO);
-    cb (MUSICMETEO);
+    getSongs(cb, MUSICMETEO); // -> aggiornamento DOM
   }, url);
 }
 
@@ -41,6 +41,6 @@ function parseWeather (err, obj) {
 
 
 function getSongs (main) {
-  var url = link + main; // completare
+  var url = "https://api.musixmatch.com/ws/1.1/track.search?format=json&q_lyrics=sunny&quorum_factor=1&apikey=f0b389bb16427eb7a002b4938cd757cc"
   request(cb, url);
 }
