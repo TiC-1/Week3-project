@@ -12,13 +12,21 @@ document.getElementById("searchForm").addEventListener("submit", function(event)
 var createSongNode = function(song) {
   console.log(song);
   var songNode = document.createElement("li");
+
+  //added some classes for the style in the DOM
   songNode.setAttribute('class','li_dom');
 
+  songText = document.createElement("a");
+  songText.setAttribute('class','a_dom');
+
   songNode.dataset.id = song.id;
-  songNode.textContent = song.title;
+  songText.textContent = song.title;
+
   songCover = document.createElement('img');
   songCover.src = song.thumbnail;
+    songNode.appendChild(songText);
   songNode.appendChild(songCover);
+
 
   return songNode;
 };
