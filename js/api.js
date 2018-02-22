@@ -45,8 +45,9 @@ function parseWeather(err, obj) {
 
 }
 
+
 function getVideos(cb, state) {
-  var url = "https://www.googleapis.com/youtube/v3/search?q=" + state.weather + "&part=snippet&maxResults=10&type=video&key=AIzaSyAYKTQjmWZ-aglVhBOEa9tCWLYrRV2jeLU";
+  var url = "https://www.googleapis.com/youtube/v3/search?q=" + state.weather + "+song&part=snippet&maxResults=10&type=video&key=AIzaSyAYKTQjmWZ-aglVhBOEa9tCWLYrRV2jeLU";
   request(function(err, obj) {
     MUSICMETEO = parseVideos(err, obj);
     cb(MUSICMETEO);
@@ -70,7 +71,9 @@ function parseVideos(err, obj) {
     videosList.push(videoItem);
   }
 
+
   MUSICMETEO.video = videosList;
   return MUSICMETEO;
+
 
 }
