@@ -1,34 +1,51 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MusicMetheoropathetic</title>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicMetheoropathetic</title>
     <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+  </head>
 
-<section class="outerContainer">
+  <body>
 
-    <div class="input_form">
-         <h1 class="input_heading" tabindex="0">MusicMetheoropathetic?</h1>
-         <p class=instruction> Where are you feeling right now?</p>
-         <form class="myForm" id="searchForm">
-           <input class="myForm-input myForm-input-text" aria-label="input textbox" placeholder="Type your current city" type="text" name="description" value="" required aria-required="true">
-           <input class="myForm-input myForm-input-button" type="submit" role="button" aria-label="Search song" value="" tabindex="0">
-         </form>
+    <div id="header">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsumLoremLoremipsum
+    </div>
+    <div id="container">
+      <div id="center" class="column">
 
-<div id="gallery">
-  <div id="search-results">
+        <section class="outerContainer">
 
-  </div>
-</div>
+          <div class="input_form">
+            <h1 class="input_heading" tabindex="0">MusicMetheoropathetic?</h1>
+            <p class=instruction> Where are you feeling right now?</p>
+            <form class="myForm" id="searchForm">
+              <input class="myForm-input myForm-input-text" aria-label="input textbox" placeholder="Type your current city" type="text" name="description" value="" required aria-required="true">
+              <input class="myForm-input myForm-input-button" type="submit" role="button" aria-label="Search song" value="" tabindex="0">
+            </form>
 
-</div>
+            <div id="gallery">
+              <div id="search-results">
 
-</section>
-  <script src="js/logic.js"></script>
-  <script src="js/api.js"></script>
-  <script src="js/dom.js"></script>
-</body>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div id="left" class="column"> Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsumLoremLoremipsum
+      </div>
+      <div id="right" class="column">
+        body { min-width: 630px; /* 2x (LC fullwidth + CC padding) + RC fullwidth */ } #container { padding-left: 200px; /* LC fullwidth */ padding-right: 190px; /* RC fullwidth + CC padding */ } #container .column { position: relative; float: left; } #center
+        { padding: 10px 20px; /* CC padding */ width: 100%; } #left { width: 180px; /* LC width */ padding: 0 10px; /* LC padding */ right: 240px; /* LC fullwidth + CC padding */ margin-left: -100%; } #right { width: 130px; /* RC width */ padding: 0 10px;
+        /* RC padding */ margin-right: -190px; /* RC fullwidth + CC padding */ } #footer { clear: both; }/*** IE Fix ***/ * html #left { left: 150px; /* RC fullwidth */ }
+      </div>
+
+      </section>
+    </div>
+    <div id="footer"></div>
+    <script src="js/logic.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/dom.js"></script>
+  </body>
+
 </html>
