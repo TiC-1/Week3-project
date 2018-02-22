@@ -8,6 +8,7 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: 'Nunito', sans-serif;
 }
 
 }
@@ -21,7 +22,7 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  
+
 
 }
 .li_dom {
@@ -33,7 +34,15 @@ body {
   padding: 50px;
 }
 .a_dom{
-  padding-bottom:30px;
+  font-style: italic;
+  font-size: 22px;
+  padding-bottom:50px;
+}
+.h2_dom{
+  padding-top:30px;
+  text-align: center;
+  font-size: 22px;
+  font-style: italic;
 }
 
 .instruction{
