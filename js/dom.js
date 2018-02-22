@@ -14,24 +14,26 @@ var createSongNode = function(song) {
   var songNode = document.createElement("li");
 
   //added some classes for the style in the DOM
-  songNode.setAttribute('class','li_dom');
+  songNode.setAttribute('class', 'li_dom');
+  songNode.dataset.id = song.id;
 
   songText = document.createElement("a");
-  songText.setAttribute('class','a_dom');
-
-  songNode.dataset.id = song.id;
+  songText.setAttribute('class', 'a_dom');
   songText.textContent = song.title;
+  songText.href = "www.youtube.com/watch?v=" + song.id;
 
   songCover = document.createElement('img');
   songCover.src = song.thumbnail;
-    songNode.appendChild(songText);
-  songNode.appendChild(songCover);
+
+  songText.appendChild(songCover);
+  songNode.appendChild(songText);
+  // songNode.appendChild(songCover);
 
 
   return songNode;
 };
 
-var introduction = function (city, weatherLocation) {
+var introduction = function(city, weatherLocation) {
   var intro = document.querySelector(".introduction");
   var label = document.createElement("h2");
   label.innerText = "In " + city + " the weather is " + weatherLocation;
