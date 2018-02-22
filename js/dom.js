@@ -23,8 +23,16 @@ var createSongNode = function(song) {
   return songNode;
 };
 
+var introduction = function (city, weatherLocation) {
+  var intro = document.querySelector(".introduction");
+  var label = document.createElement("h2");
+  label.innerText = "In " + city + " the weather is " + weatherLocation;
+  intro.appendChild(label);
+  console.log(intro);
+};
 
 var renderState = function(state) {
+  introduction(MUSICMETEO.city, MUSICMETEO.weather);
   var songListNode = document.createElement('ul');
   state.forEach(function(s) {
     songListNode.appendChild(createSongNode(s));
