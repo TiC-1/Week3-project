@@ -1,6 +1,5 @@
 var container = document.getElementById('search-results');
 
-
 document.getElementById("searchForm").addEventListener("submit", function(event) {
   event.preventDefault();
   var location = event.target.querySelector("input").value;
@@ -9,32 +8,25 @@ document.getElementById("searchForm").addEventListener("submit", function(event)
   // window.MUSICMETEO
 });
 
-var createSongNode = function(song) {
-  console.log(song);
-  var songNode = document.createElement("li");
+var createVideoNode = function(video) {
+  var videoNode = document.createElement("li");
 
   //added some classes for the style in the DOM
-  songNode.setAttribute('class', 'li_dom');
-  songNode.dataset.id = song.id;
+  videoNode.setAttribute('class', 'li_dom');
+  videoNode.dataset.id = video.id;
 
-  songText = document.createElement("p");
-  songText.setAttribute('class', 'a_dom');
-  songText.textContent = song.title;
-  songText.target = "_blank";
-  songLink = document.createElement('a');
-  songCover = document.createElement('img');
-  songLink.href = "https://www.youtube.com/watch?v=" + song.id;
-  songCover.src = song.thumbnail;
-  songNode.appendChild(songText);
-  songLink.appendChild(songCover)
-
-  songNode.appendChild(songLink);
-
-
-  // songNode.appendChild(songCover);
-
-
-  return songNode;
+  videoText = document.createElement("p");
+  videoText.setAttribute('class', 'a_dom');
+  videoText.textContent = video.title;
+  videoText.target = "_blank";
+  videoLink = document.createElement('a');
+  videoCover = document.createElement('img');
+  videoLink.href = "https://www.youtube.com/watch?v=" + video.id;
+  videoCover.src = video.thumbnail;
+  videoNode.appendChild(videoText);
+  videoLink.appendChild(videoCover)
+  videoNode.appendChild(videoLink);
+  return videoNode;
 };
 
 var introduction = function(city, weatherLocation) {
@@ -42,24 +34,15 @@ var introduction = function(city, weatherLocation) {
   var label = document.createElement("h2");
   label.setAttribute('class', 'h2_dom');
   label.innerText = "In " + city + " the weather is " + weatherLocation;
-  intro.appendChild(label);
-  console.log(intro);
+  intro.replaceChild(label, intro.firstChild);
 };
 
-var renderState = function(state) {
+var updateDOM = function(MUSICMETEO) {
   introduction(MUSICMETEO.city, MUSICMETEO.weather);
-  var songListNode = document.createElement('ul');
-  state.forEach(function(s) {
-    songListNode.appendChild(createSongNode(s));
+
+  var videoListNode = document.createElement('ul');
+  MUSICMETEO.video.forEach(function(v) {
+    videoListNode.appendChild(createVideoNode(v));
   });
-  container.replaceChild(songListNode, container.firstChild);
+  container.replaceChild(videoListNode, container.firstChild);
 };
-
-function updateDOM() {
-  // 1. crea un nodo con createSongNode
-  // 2. inserisce titolo e cover della canzone
-  var songs = MUSICMETEO.video;
-  console.log(MUSICMETEO);
-  if (container) renderState(songs);
-
-} //fine della funzione updateDOM
