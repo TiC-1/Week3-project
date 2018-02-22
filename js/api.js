@@ -1,7 +1,3 @@
-
-
-
-
 /* generic request function, can be recycled over and over! */
 
 function request(cb, url) {
@@ -24,7 +20,7 @@ function request(cb, url) {
 }
 
 function getWeather(cb, cb2, city) {
-  var url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=5d8d83f7d25d47c3249949b56a91d910"; // completare
+  var url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=5d8d83f7d25d47c3249949b56a91d910"; // completare
   request(function(err, obj) {
     var state = parseWeather(err, obj);
     cb2(cb, state.weather);
