@@ -42,7 +42,7 @@ var introduction = function(city, weatherLocation) {
   var label = document.createElement("h2");
   label.setAttribute('class', 'h2_dom');
   label.innerText = "In " + city + " the weather is " + weatherLocation;
-  intro.appendChild(label);
+  intro.replaceChild(label, intro.firstChild);
   console.log(intro);
 };
 
