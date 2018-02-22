@@ -20,7 +20,7 @@ var createSongNode = function(song) {
   songText = document.createElement("a");
   songText.setAttribute('class', 'a_dom');
   songText.textContent = song.title;
-  songText.href = "www.youtube.com/watch?v=" + song.id;
+  songText.href = "https://www.youtube.com/watch?v=" + song.id;
 
   songCover = document.createElement('img');
   songCover.src = song.thumbnail;
