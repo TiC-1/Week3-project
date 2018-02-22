@@ -21,6 +21,7 @@ var createSongNode = function(song) {
   songText.setAttribute('class', 'a_dom');
   songText.textContent = song.title;
   songText.href = "https://www.youtube.com/watch?v=" + song.id;
+  songText.target = "_blank";
 
   songCover = document.createElement('img');
   songCover.src = song.thumbnail;
