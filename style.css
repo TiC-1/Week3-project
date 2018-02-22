@@ -9,13 +9,11 @@
   padding: 0;
   margin: 0;
 }
-* html #left {
-  left: 150px;  /* RC width */
+
 }
 body {
   font-family: 'Nunito', sans-serif;
   font-weight: 100;
-  min-width: 550px;  /* 2x LC width + RC width */
 }
 
 .outerContainer {
