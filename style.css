@@ -1,43 +1,29 @@
-/*<div class="input_form">
-     <h1 class="input_heading" tabindex="0">MUSICMETHEOROPATHETIC?!</h1>
-     <form class="myForm" id="add-todo">
-       <input class="myForm-input myForm-input-text" aria-label="input textbox" placeholder="Search a new song" type="text" name="description" value="" required aria-required="true">
-       <input class="myForm-input myForm-input-button" type="submit" role="button" aria-label="Search song" value="" tabindex="0">
-     </form>*/
-
 * {
   padding: 0;
   margin: 0;
-  font-family: 'Nunito', sans-serif;
+  box-sizing: border-box;
 }
 
-}
 body {
   font-family: 'Nunito', sans-serif;
-  font-weight: 100;
 }
 
-.outerContainer {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-
-
-}
 .li_dom {
-  display: flex;
   text-align: center;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  padding: 50px;
+  padding: 30px;
+  list-style: none;
 }
+
+.li_dom img {
+  width: 100%;
+}
+
 .a_dom{
   font-style: italic;
   font-size: 22px;
   padding-bottom:50px;
 }
+
 .h2_dom{
   padding-top:30px;
   text-align: center;
@@ -50,7 +36,6 @@ body {
   text-align: center;
   color: black;
   padding: 50px 40px;
-  /* background: #333333; */
 }
 
 .track{
@@ -63,7 +48,6 @@ body {
 .input_form {
   width: 100%;
   box-shadow: 0px 1px 1px 0px rgba(100,100,100,0.75);
-
 }
 
 .input_heading {
@@ -99,7 +83,6 @@ body {
   background: url('images/search.svg');
   background-repeat: no-repeat;
   background-position: center;
-
 }
 
 .myForm-input-button:hover {
@@ -108,9 +91,17 @@ body {
 }
 
 .myForm-input::-webkit-input-placeholder {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 100;
   font-size: 1rem;
   color: #bababa;
+}
 
+@media (min-width: 768px) {
+  #search-results ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .li_dom {
+    width: 33%;
+  }
 }
