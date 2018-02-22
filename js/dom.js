@@ -17,17 +17,20 @@ var createSongNode = function(song) {
   songNode.setAttribute('class', 'li_dom');
   songNode.dataset.id = song.id;
 
-  songText = document.createElement("a");
+  songText = document.createElement("p");
   songText.setAttribute('class', 'a_dom');
   songText.textContent = song.title;
-  songText.href = "https://www.youtube.com/watch?v=" + song.id;
   songText.target = "_blank";
-
+  songLink = document.createElement('a');
   songCover = document.createElement('img');
+  songLink.href = "https://www.youtube.com/watch?v=" + song.id;
   songCover.src = song.thumbnail;
-
-  songText.appendChild(songCover);
   songNode.appendChild(songText);
+  songLink.appendChild(songCover)
+
+  songNode.appendChild(songLink);
+
+
   // songNode.appendChild(songCover);
 
 
@@ -37,6 +40,7 @@ var createSongNode = function(song) {
 var introduction = function(city, weatherLocation) {
   var intro = document.querySelector(".introduction");
   var label = document.createElement("h2");
+  label.setAttribute('class', 'h2_dom');
   label.innerText = "In " + city + " the weather is " + weatherLocation;
   intro.appendChild(label);
   console.log(intro);
