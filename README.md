@@ -1,35 +1,51 @@
-# Our week 3 project
+# Our week 3 project : A 'MusicMetheoropathetic' App
 
-## Project description and user stories
+**The purpose of this App is to provide videos of songs related to the actual weather in a place.  
+It uses _Open Weather Map_  and _Youtube_ APIs.**
+
+## User stories
+
+As a user, I want to watch video clips of song related to the actual meteo in the place I am, or any another place in the world.
+
+## Statement process
+
+1. The user types a location in a form.
+2. A request is sent to get the weather 'keyword' in that place.
+3. A second request is sent to get videos related to this 'keyword'.
+5. Requests' responses are processed.
+4. The page content is actualised with a gallery of these videos, each one with a link to its Youtube page.
+
 
 ## File structure
 
+Italic labels are directories, others are files.
+
 - index.html
 - style.css
-- js
-  - logic.js (logic processes with API response)
-  - api.js (request functions)
-  - dom.js (DOM manipulation functions)
-- test
-  - test-logic.js
-  - test-logic.html
+- _images_
+- _js_
+  - api.js
+  - logic.js
+  - dom.js
+- _test_
   - test-api.html
   - test-api.js
+  - test-logic.html
+  - test-logic.js
   - test-dom.html
   - test-dom.js
+  - weatherObj.js
+  - youtubeObj.js
 
-  meteoropathy
+## API
 
-  user story
+**Open weather**
+- https://openweathermap.org/api
 
-    1. the user types one location; obtains current weather; requires API key
-    2. the site returns the weather and a list of 10 songs that can describe it, using musixmatch; requires API key.
-    3. DOM shows the artwork (album coverart property of the object) of the songs.
-    4. by clicking on the artwork, the song is played with youtube; does not require KEY.
-    5. STRETCH GOAL: the user can select an option to select only songs in local language, to feel in the city he/she has chosen - this may require translating the weather description with wordreference
+**Youtube**
+- https://developers.google.com/youtube/v3/
 
+## Stech goal and app improvement
 
-  ## APIs doc
-
-  ### youtube
-  https://developers.google.com/youtube/v3/docs/search/list
+- The default page would provide videos with automatic geolocation of the user.
+- The form would have and option to get only songs in local language of the place, making the user to feel in the city he/she has chosen.
