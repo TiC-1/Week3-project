@@ -12,6 +12,8 @@ document.getElementById("searchForm").addEventListener("submit", function(event)
 var createSongNode = function(song) {
   console.log(song);
   var songNode = document.createElement("li");
+  songNode.setAttribute('class','li_dom');
+
   songNode.dataset.id = song.id;
   songNode.textContent = song.title;
   songCover = document.createElement('img');
