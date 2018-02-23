@@ -1,7 +1,7 @@
 // API request TEST **************************************
 
 test("Api Test", function(assert) {
-  function assertTestApiReq (cb, obj) {
+  function assertTestApiReq (err, obj) {
     assert.ok(obj.hasOwnProperty("kind"), "Request Obj");
     
   }
