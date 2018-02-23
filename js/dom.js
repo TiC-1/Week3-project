@@ -26,11 +26,9 @@ var createSongNode = function(song) {
   songCover = document.createElement('img');
   songLink.href = "https://www.youtube.com/watch?v=" + song.id;
   songCover.src = song.thumbnail;
-  songNode.appendChild(songText);
   songLink.appendChild(songCover)
-
   songNode.appendChild(songLink);
-
+  songNode.appendChild(songText);
 
   // songNode.appendChild(songCover);
 
