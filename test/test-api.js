@@ -1,3 +1,18 @@
+// API request TEST **************************************
+
+test("Api Test", function(assert) {
+  function assertTestApiReq (cb, obj) {
+    assert.ok(obj.hasOwnProperty("kind"), "Request Obj");
+    
+  }
+  var url = "https://www.googleapis.com/youtube/v3/search?q=google&part=snippet&maxResults=10&type=video&key=AIzaSyAYKTQjmWZ-aglVhBOEa9tCWLYrRV2jeLU";
+  request (assertTestApiReq, url);
+  
+  
+  assert.ok(true, "Empty test to wait for AJAX call");
+
+});
+
 // WEATHER TEST *****************************************
 
 test("Weather API Test", function(assert) {
