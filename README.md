@@ -25,7 +25,6 @@ Italic labels are directories, others are files.
 - _images_
 - _js_
   - api.js
-  - logic.js
   - dom.js
 - _test_
   - test-api.html
@@ -36,6 +35,7 @@ Italic labels are directories, others are files.
   - test-dom.js
   - weatherObj.js
   - youtubeObj.js
+  - musicmeteoObj.js
 
 ## API
 
