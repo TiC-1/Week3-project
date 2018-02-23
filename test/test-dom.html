@@ -8,10 +8,20 @@
 </head>
 
 <body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
 
+  <form id="searchForm">
+    <input type="text" name="description" value="">
+    <input type="submit">
+  </form>
+
+  <div class="introduction"><h2></h2></div>
+  <div id="search-results"><ul></ul></div>
 </body>
 
 <script src="https://code.jquery.com/qunit/qunit-1.23.1.js"></script>
+<script type="text/javascript" src="../js/logic.js"></script>
 <script type="text/javascript" src="../js/dom.js"></script>
 <script type="text/javascript" src="test-dom.js"></script>
 

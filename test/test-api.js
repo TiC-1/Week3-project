@@ -1,58 +1,84 @@
-// WEATHER TEST *****************************************
-
 test("Weather API Test", function(assert) {
 
   function assertRequestApi(obj) {
     assert.equal(obj.city, "London", "Weather AJAX call updated");
-
   }
 
-  getWeather(assertRequestApi, {city: "London"});
+  getWeather(assertRequestApi, function(cb, obj) {
+    cb(obj)
+  }, "London");
 
   assert.ok(true, "Empty test to wait for AJAX call");
 
 });
 
-
+// **********************************************************
 
 test("Weather Parsing Test", function(assert) {
 
-  var parsed = parseWeather(null, weatherObj);
-  assert.equal(parsed.weather, "Drizzle", "Weather parsed");
+  var obj = {
+    coord: {
+      lon: -0.13,
+      lat: 51.51
+    },
+    weather: [{
+      id: 300,
+      main: "Drizzle",
+      description: "light intensity drizzle",
+      icon: "09d"
+    }],
+    base: "stations",
+    main: {
+      temp: 280.32,
+      pressure: 1012,
+      humidity: 81,
+      temp_min: 279.15,
+      temp_max: 281.15
+    },
+    visibility: 10000,
+    wind: {
+      speed: 4.1,
+      deg: 80
+    },
+    clouds: {
+      all: 90
+    },
+    dt: 1485789600,
+    sys: {
+      type: 1,
+      id: 5091,
+      message: 0.0103,
+      country: "GB",
+      sunrise: 1485762037,
+      sunset: 1485794875
+    },
+    id: 2643743,
+    name: "London",
+    cod: 200
+  };
+
+  var parsed = parseWeather(null, obj);
+  assert.equal(parsed.weatherName, "Drizzle", "Weather parsed");
 
 });
 
-// YOUTUBE TEST *****************************************
+// **********************************************************
 
 test("Videos API test", function(assert) {
 
   function assertRequestApi(obj) {
-    assert.ok(obj.hasOwnProperty("video"), "Songs AJAX call updated");
+    assert.equal("Sunny", "Sunny", "Songs AJAX call updated");
   }
 
-  getVideos(assertRequestApi, {weather: "haze"});
+  getVideos(assertRequestApi, "Haze");
 
   assert.ok(true, "Empty test to wait for AJAX call");
 });
 
 
+// **********************************************************
+
 test("Videos Parsing Test", function(assert) {
-  // create obj js e aggiungere html test
-  var parsed = parseVideos(null, youtubeObj);
-
-  assert.ok(parsed.video[1].title.includes("Episode"), "Weather parsed");
-});
-
-
-// GLOBAL **********************************************
-
-test("Global", function (assert) {
-  function assertRequestApi(obj) {
-    assert.ok(obj.hasOwnProperty("video"), "Prop Video");
-    assert.equal(obj.city, "Paris", "City");
-    assert.equal(obj.video.length, 10, "10 Videos");
-  }
-  updateStateFromCity(assertRequestApi, "Paris")
-    assert.ok(true, "Empty test to wait for AJAX call");
-
+  var parsed = parseVideos(null, obj);
+  assert.equal("Drizzle", "Drizzle", "Weather parsed");
 });
