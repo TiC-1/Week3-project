@@ -1,7 +1,7 @@
 var container = document.getElementById('search-results');
 
 
-document.getElementById("searchForm").addEventListener("submit", function(event) {
+  document.getElementById("searchForm").addEventListener("submit", function(event) {
   event.preventDefault();
   var location = event.target.querySelector("input").value;
   //da fare il link tra MUSICMETEO e location (starà nelle API)
